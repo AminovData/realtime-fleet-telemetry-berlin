@@ -35,16 +35,14 @@ Route replay, performance trends, failure timeline with date filtering.
 ![Historical Dashboard](screenshots/historical_dashboard.png)
 
 ## Project Structure
-
+## Project Structure
+```
 real-time-fleet-telemetry-berlin/
-│
 ├── vehicle_simulation_folder/
-│   │
 │   ├── data_folder/
 │   │   ├── berlin_fixing_stations.json
 │   │   ├── routes_1000_interpolated.json
 │   │   └── stopped_vehicles.json
-│   │
 │   ├── simulation.py
 │   ├── vehicle.py
 │   ├── kafka_utils.py
@@ -52,19 +50,16 @@ real-time-fleet-telemetry-berlin/
 │   └── helpers.py
 │
 ├── vehicle_dashboard_folder/
-│   │
 │   ├── static/
 │   │   ├── historical_dashboard.css
 │   │   ├── historical.js
 │   │   ├── individual_dashboard_style.css
 │   │   ├── main_dashboard.css
 │   │   └── main.js
-│   │
 │   ├── templates/
 │   │   ├── historical_dashboard.html
 │   │   ├── index.html
 │   │   └── specific_car.html
-│   │
 │   ├── app.py
 │   ├── config.py
 │   ├── db_dash_handler.py
@@ -73,7 +68,7 @@ real-time-fleet-telemetry-berlin/
 │
 ├── requirements.txt
 └── README.md
-
+```
 ## Quick Start
 
 ```bash
