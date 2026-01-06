@@ -20,7 +20,7 @@ Synthetic Data → Kafka → Redis/MongoDB → Flask API → WebSocket → Dashb
 ### Fleet View
 Live map of all vehicles. Red = failure, Green = normal. Shows failure rates and affected vehicles.
 
-![Fleet Dashboard](screenshots/live_dashboard.png)
+https://github.com/user-attachments/assets/bc59ece4-2610-45e8-ac1f-7760a39c5135
 
 ### Vehicle Detail
 Per-vehicle telemetry: speed, acceleration, engine temp, tire pressure, battery, oil pressure, active failures.
