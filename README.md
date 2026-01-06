@@ -1,5 +1,4 @@
-# realtime-fleet-telemetry-berlin
-# Fleet Telemetry Pipeline
+# Real-Time Fleet Telemetry Pipeline
 
 Real-time fleet monitoring system with synthetic vehicle telemetry, streaming architecture, and live dashboards.
 
