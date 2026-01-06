@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vehicle Dashboard - Individual</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='individual_dashboard_style.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="map"></div>
+
+    <div id="metrics">
+      <div class="metric-box">
+        <div class="metric-title">Vehicle Info</div>
+        <div>Vehicle ID: <span id="vehicle-id"></span></div>
+        <div>Last Update: <span id="timestamp"></span></div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-title">Operational Status</div>
+        <div>Speed: <span id="speed"></span> km/h</div>
+        <div>Acceleration: <span id="acceleration"></span> m/s²</div>
+        <div>Motion Status: <span id="motion-status"></span></div>
+        <div>Brake Status: <span id="brake-status"></span></div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-title">Engine & Power</div>
+        <div>Engine Temp: <span id="engine-temp"></span></div>
+        <div>Coolant Temp: <span id="coolant-temp"></span></div>
+        <div>Oil Pressure: <span id="oil-pressure"></span></div>
+        <div>Battery Level: <span id="battery-level"></span>%</div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-title">Tire Status</div>
+        <div class="tire-list">
+          <div class="tire">FL: <span id="tire-fl"></span></div>
+          <div class="tire">FR: <span id="tire-fr"></span></div>
+          <div class="tire">RL: <span id="tire-rl"></span></div>
+          <div class="tire">RR: <span id="tire-rr"></span></div>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-title">Active Sensor Failures</div>
+        <div>Failure Count: <span id="failure-count"></span></div>
+        <div id="sensor-failures" class="metric-list">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script type="text/javascript">
+  window.last_known = {{ last_known | safe }}; 
+  console.log("Last known vehicle data:", window.last_known);
+  </script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vehicle Live Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main_dashboard.css') }}">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="map"></div>
+    <div id="metrics">
+      <div id="vehicle-selector-box">
+        <label>Detailed Information</label>
+        <input type="text" id="vehicle-search" placeholder="Type vehicle ID..." autocomplete="off"/>
+        <div id="vehicle-suggestions"></div>
+      </div>
+
+      <div class="metrics-row" id="top-metrics-row">
+        <div class="metric-box">
+          <div class="metric-title">Vehicles with Active Failures</div>
+          <div id="active-failures">0</div>
+        </div>
+        <div class="metric-box">
+          <div class="metric-title">Failure Rate (%)</div>
+          <div id="failure-rate">0%</div>
+        </div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-title">Most Common Failures</div>
+        <div id="common-failures" class="metric-list"></div>
+      </div>
+
+      <div class="metric-box">
+        <div class="metric-title">Vehicles with Failures</div>
+        <div id="failed-vehicles" class="metric-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

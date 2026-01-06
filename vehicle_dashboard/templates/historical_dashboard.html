@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vehicle Historical Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='historical_dashboard.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="panel">
+        <div id="vehicle-selector-box">
+            <label>Vehicle ID:</label>
+            <input type="text" id="vehicle-search" placeholder="Type vehicle ID..." autocomplete="off" />
+            <div id="vehicle-suggestions"></div>
+        </div>
+        <label>Start:</label>
+        <input type="date" id="startDate">
+        <label for="endDate">End:</label>
+        <input type="date" id="endDate">
+        <button id="applyFilter">▶ Apply</button>
+    </div>
+
+    <div class="metrics">
+      <h3>Overview Metrics</h3>
+        <div class="metrics-grid">
+            <div class="metrics-item"><strong>Distance</strong><br><span id="distance">0 km</span></div>
+            <div class="metrics-item"><strong>Duration</strong><br><span id="duration">0 h</span></div>
+            <div class="metrics-item"><strong>Failures</strong><br><span id="failures">0</span></div>
+            <div class="metrics-item"><strong>Avg Speed</strong><br><span id="avgSpeed">0 km/h</span></div>
+            <div class="metrics-item"><strong>Max Speed</strong><br><span id="maxSpeed">0 km/h</span></div>
+            <div class="metrics-item"><strong>Temp</strong><br><span id="engineTemp">0 °C</span></div>
+        </div>
+    </div>
+
+    <div class="metrics">
+        <h3>Route Map</h3>
+        <div id="map"></div>
+    </div>
+    
+    <div id="independent-filter" class="panel" style="margin: 10px;">
+        <h4>Trends & Even Filter</h4>
+        <label>Start:</label>
+        <input type="date" id="independentStart">
+
+        <label>End:</label>
+        <input type="date" id="independentEnd">
+
+        <button id="applyIndependentFilter">▶ Apply</button>
+    </div>
+
+    <div class="row-section">
+      <div class="left-panel">
+        <h3>Performance Trends</h3>
+        <canvas id="speedTempChart"></canvas>
+        <canvas id="batteryOilChart"></canvas>
+      </div>
+        <div class="right-panel">
+            <h3>Failure Events Timeline</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                </tr>
+                </thead>
+                <tbody id="failureTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
