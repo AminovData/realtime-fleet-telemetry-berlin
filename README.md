@@ -20,7 +20,8 @@ Synthetic Data → Kafka → Redis/MongoDB → Flask API → WebSocket → Dashb
 ### Fleet View
 Live map of all vehicles. Red = failure, Green = normal. Shows failure rates and affected vehicles.
 ## Demo
-<video src="https://github.com/user-attachments/assets/bc59ece4-2610-45e8-ac1f-7760a39c5135" autoplay loop muted playsinline width="70%"></video>
+<video src="https://github.com/user-attachments/assets/bc59ece4-2610-45e8-ac1f-7760a39c5135" autoplay loop muted playsinline width="20%"></video>
+
 
 
 ### Vehicle Detail
