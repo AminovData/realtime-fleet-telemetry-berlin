@@ -63,7 +63,7 @@ real-time-fleet-telemetry-berlin/
 │   ├── simulation.py 
 │   └── vehicle.py
 ├── requirements.txt
-└── env_example
+└── env_example.txt
 └── README.md
 ```
 ## Quick Start
