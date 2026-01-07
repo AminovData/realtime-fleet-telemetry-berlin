@@ -34,7 +34,8 @@ Route replay, performance trends, failure timeline with date filtering.
 
 ## Project Structure
 ```
-├── feet_dashboard/
+real-time-fleet-telemetry-berlin/
+├── fleet_dashboard/
 │   ├── static/
 │   │   ├── historical_dashboard.css
 │   │   ├── historical.js
@@ -48,37 +49,45 @@ Route replay, performance trends, failure timeline with date filtering.
 │   ├── app.py
 │   ├── config.py
 │   ├── db_dash_handler.py
-│   ├── helpers.py
-│   
-real-time-fleet-telemetry-berlin/
-├── real_time_fleet_data_simulator/
+│   └── helpers.py
+│
+├── fleet_data_simulator/
 │   ├── data/
 │   │   ├── berlin_fixing_stations.json
 │   │   ├── routes_1000_interpolated.json
-│   │   └── stopped_vehicles.json #Automatically Created 
+│   │   └── stopped_vehicles.json
 │   ├── config.py
 │   ├── consumer_s3_mongo.py   
 │   ├── helpers.py
 │   ├── kafka_utils.py 
 │   ├── simulation.py 
 │   └── vehicle.py
+│
 ├── requirements.txt
-└── env_example.txt
+├── env_example.txt
 └── README.md
 ```
 ## Quick Start
 
+### Prerequisites
+- Python 3.10+
+- MongoDB running locally
+- Redis running locally
+- Kafka running locally
+
+### Run
 ```bash
-# Start infrastructure
-docker-compose up -d  # Kafka, Redis, MongoDB
+# Terminal 1 - Start Kafka consumer
+cd fleet_data_simulator
+python consumer_s3_mongo.py
 
-# Run simulation
-cd vehicle_simulation
-python simulation.py
-
-# Run dashboard
-cd vehicle_dashboard
+# Terminal 2 - Start dashboard
+cd fleet_dashboard
 python app.py
+
+# Terminal 3 - Start simulation
+cd fleet_data_simulator
+python simulation.py
 
 # Open http://localhost:8081
 ```
