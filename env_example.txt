@@ -1,0 +1,22 @@
+# MONGO
+MONGO_URI=mongodb://localhost:27017/
+MONGO_DB=vehicle_db
+MONGO_COLLECTION=alerts
+MONGO_HISTORY_COLLECTION =vehicle_history
+MONGO_DLQ_COLLECTION =vehicle_dlq
+ORS_API_KEY="you can get it here https://openrouteservice.org/"
+
+
+# Kafka
+KAFKA_BROKERS=localhost:29092,localhost:29093,localhost:29094
+KAFKA_TOPIC=vehicle_data
+CONSUMER_GROUP=vehicle_consumer_group
+
+
+# REDIS
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_DB=0
+REDIS_STREAM =vehicle_stream
+REDIS_GROUP =vehicle_consumers
+CONSUMER =dashboard
