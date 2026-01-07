@@ -1,0 +1,9 @@
+flask==3.0.3
+flask-socketio==5.5.1
+flask-cors==5.0.0
+redis==6.1.1
+pymongo==4.10.1
+kafka-python==2.2.15
+geopy==2.4.1
+python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
