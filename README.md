@@ -35,19 +35,7 @@ Route replay, performance trends, failure timeline with date filtering.
 ## Project Structure
 ## Project Structure
 ```
-real-time-fleet-telemetry-berlin/
-├── vehicle_simulation_folder/
-│   ├── data_folder/
-│   │   ├── berlin_fixing_stations.json
-│   │   ├── routes_1000_interpolated.json
-│   │   └── stopped_vehicles.json
-│   ├── simulation.py
-│   ├── vehicle.py
-│   ├── kafka_utils.py
-│   ├── consumer_s3_mongo.py
-│   └── helpers.py
-│
-├── vehicle_dashboard_folder/
+├── feet_dashboard/
 │   ├── static/
 │   │   ├── historical_dashboard.css
 │   │   ├── historical.js
@@ -62,9 +50,21 @@ real-time-fleet-telemetry-berlin/
 │   ├── config.py
 │   ├── db_dash_handler.py
 │   ├── helpers.py
-│   └── env_example
-│
+│   
+real-time-fleet-telemetry-berlin/
+├── real_time_fleet_data_simulator/
+│   ├── data/
+│   │   ├── berlin_fixing_stations.json
+│   │   ├── routes_1000_interpolated.json
+│   │   └── stopped_vehicles.json #Automatically Created 
+│   ├── config.py
+│   ├── consumer_s3_mongo.py   
+│   ├── helpers.py
+│   ├── kafka_utils.py 
+│   ├── simulation.py 
+│   └── vehicle.py
 ├── requirements.txt
+└── env_example
 └── README.md
 ```
 ## Quick Start
