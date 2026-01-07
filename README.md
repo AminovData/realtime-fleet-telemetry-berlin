@@ -30,7 +30,7 @@ Per-vehicle telemetry: speed, acceleration, engine temp, tire pressure, battery,
 Route replay, performance trends, failure timeline with date filtering.
 #### Demo
 
-<img src="https://github.com/user-attachments/assets/5ccbf441-7f32-46be-8b90-106826ef9ab5" width="600">
+<img src="https://github.com/user-attachments/assets/5ccbf441-7f32-46be-8b90-106826ef9ab5" width="1000">
 
 ## Project Structure
 ## Project Structure
